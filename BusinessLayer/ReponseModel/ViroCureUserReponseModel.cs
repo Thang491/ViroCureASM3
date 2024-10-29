@@ -27,7 +27,13 @@ namespace BusinessLayer.ReponseModel
 
         public string Email { get; set; } = null!;
 
-        public int Role { get; set; }
+        public UserRole Role { get; set; }
+       
     }
-
+    public enum UserRole
+    {
+        Administrator = 1,
+        Patient = 2,
+        Doctor = 3
+    }
 }

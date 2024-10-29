@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ViroCure_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d348a0f10d09492c3ce571f3db3f7ececaa5de2f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ViroCure_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ViroCure_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

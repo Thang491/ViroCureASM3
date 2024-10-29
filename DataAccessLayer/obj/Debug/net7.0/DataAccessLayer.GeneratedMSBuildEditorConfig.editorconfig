@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DataAccessLayer
-build_property.ProjectDir = C:\Users\admin\OneDrive\Desktop\Se151060_DoHongThang_PEtest\PE_PRN231_FA24_TrialTest_DoHongThang_BE\DataAccessLayer\
+build_property.ProjectDir = C:\Users\Catizen 20.000$\Desktop\ASM3\ViroCureASM3\DataAccessLayer\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
