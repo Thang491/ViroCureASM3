@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ViroCure_API.props" />
+</Project>
