@@ -28,37 +28,41 @@ namespace BusinessLayer.CategoryBusiness
 
         public async Task<BaseResponseModel<LoginReponseModel>> Login(string email, string password)
         {
-            var User = await _unitOfWork.ViroCureUserRepository.LoginUser(email, password);
-            if (User != null)
+            try
             {
-                /*                string token = Helper.GenerateJwtToken(User, _configuration);
-                */
+                var User = await _unitOfWork.ViroCureUserRepository.LoginUser(email, password);
+                if (User == null)
+                {
+                    return new BaseResponseModel<LoginReponseModel>()
+                    {
+                        Code = 401,
+                        Message = "Unauthorized (for incorrect email/password)",
+                        Data = null
+                    };
+                }
+
                 string token = ConfigHelper.Helper.GenerateJwtToken(User, _configuration);
                 return new BaseResponseModel<LoginReponseModel>()
                 {
                     Code = 200,
-
                     Message = "Login Success",
-                    Data ={
-                         Token = new TokenModel()
-                        {
-                            Token = token
-                        },
-                       User = _mapper.Map<UserReponseModel>(User)
-                    },
+                    Data = new LoginReponseModel
+                    {
+                        Token = new TokenModel() { Token = token },
+                        User = _mapper.Map<UserReponseModel>(User)
+                    }
                 };
             }
-            return new BaseResponseModel<LoginReponseModel>()
+            catch (Exception ex)
             {
-                Code = 400,
-                Message = "Username or Password incorrect",
-                Data = new LoginReponseModel()
+                // Ghi log lỗi hoặc xử lý ngoại lệ
+                return new BaseResponseModel<LoginReponseModel>()
                 {
-                    Token = null,
-                    User = null
-                },
-            };
-
+                    Code = 500,
+                    Message = $"An error occurred: {ex.Message}",
+                    Data = null
+                };
+            }
         }
     }
 }

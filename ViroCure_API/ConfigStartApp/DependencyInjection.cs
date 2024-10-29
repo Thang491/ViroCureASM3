@@ -3,12 +3,14 @@ using BusinessLayer.CategoryBusiness;
 
 using DataAccessLayer;
 using DataAccessLayer.Entities;
-
+using BusinessLayer.ConfigHelper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using BusinessLayer.Helper;
+using Mapper = BusinessLayer.Helper.Mapper;
 
 namespace ViroCure_API.ConfigStartApp
 {
@@ -33,7 +35,7 @@ namespace ViroCure_API.ConfigStartApp
             //services.AddScoped<DbFactory>();
             services.AddScoped<UnitOfWork>();
             services.AddScoped<IViroCureUserService,ViroCureUserService>();
-
+            services.AddScoped<IPersonService,PersonService>();
             // AutoMapper
             services.AddAutoMapper(typeof(Mapper));
 

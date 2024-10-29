@@ -14,10 +14,9 @@ namespace BusinessLayer.Helper
     {
 
         public Mapper()
-        {
-            CreateMap<ViroCureUser, LoginReponseModel>();
+        {        
             CreateMap<ViroCureUser, UserReponseModel>();
-
+            CreateMap<Person, getPersonReponseModel>();
         }
 
     }
